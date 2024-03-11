@@ -16,6 +16,6 @@ namespace Project_SPS
         {
             InitializeComponent();
         }
-        //Hello
+        //Hello word
     }
 }
