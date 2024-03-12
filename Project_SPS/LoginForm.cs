@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Project_SPS
 {
-    public partial class Form1 : Form
+    public partial class Авторизация : Form
     {
-        public Form1()
+        public Авторизация()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
