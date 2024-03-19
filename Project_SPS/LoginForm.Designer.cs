@@ -34,22 +34,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.UserMenu = new System.Windows.Forms.MenuStrip();
             this.Password = new System.Windows.Forms.TextBox();
             this.HelpLink = new System.Windows.Forms.LinkLabel();
+            this.User = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.User);
             this.panel1.Controls.Add(this.HelpLink);
             this.panel1.Controls.Add(this.Password);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.UserMenu);
             this.panel1.Location = new System.Drawing.Point(210, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(373, 365);
@@ -92,16 +92,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             // 
-            // UserMenu
-            // 
-            this.UserMenu.Dock = System.Windows.Forms.DockStyle.None;
-            this.UserMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.UserMenu.Location = new System.Drawing.Point(164, 98);
-            this.UserMenu.Name = "UserMenu";
-            this.UserMenu.Size = new System.Drawing.Size(202, 24);
-            this.UserMenu.TabIndex = 4;
-            this.UserMenu.Text = "menuStrip1";
-            // 
             // Password
             // 
             this.Password.Location = new System.Drawing.Point(164, 150);
@@ -113,12 +103,19 @@
             // 
             this.HelpLink.ActiveLinkColor = System.Drawing.Color.Gray;
             this.HelpLink.AutoSize = true;
-            this.HelpLink.Location = new System.Drawing.Point(127, 263);
+            this.HelpLink.Location = new System.Drawing.Point(127, 252);
             this.HelpLink.Name = "HelpLink";
             this.HelpLink.Size = new System.Drawing.Size(114, 16);
             this.HelpLink.TabIndex = 6;
             this.HelpLink.TabStop = true;
             this.HelpLink.Text = "Забыли пароль?";
+            // 
+            // User
+            // 
+            this.User.Location = new System.Drawing.Point(164, 92);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(187, 22);
+            this.User.TabIndex = 7;
             // 
             // Авторизация
             // 
@@ -128,7 +125,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.UserMenu;
             this.Name = "Авторизация";
             this.Text = "LoginForm";
             this.panel1.ResumeLayout(false);
@@ -144,8 +140,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip UserMenu;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.LinkLabel HelpLink;
+        private System.Windows.Forms.TextBox User;
     }
 }
