@@ -20,6 +20,18 @@ namespace Project_SPS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Создаем новый экземпляр второй формы
+            Form3 Form3 = new Form3();
+
+            // Отображаем вторую форму
+            Form3.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
+        }
+
+        private void User_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
