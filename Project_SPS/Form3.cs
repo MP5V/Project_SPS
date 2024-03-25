@@ -24,7 +24,14 @@ namespace Project_SPS
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Создаем новый экземпляр второй формы
+            Nomen_list Nomenclature = new Nomen_list();
 
+            // Отображаем вторую форму
+            Nomenclature.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
