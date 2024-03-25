@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Авторизация));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.User = new System.Windows.Forms.TextBox();
+            this.HelpLink = new System.Windows.Forms.LinkLabel();
+            this.Password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.TextBox();
-            this.HelpLink = new System.Windows.Forms.LinkLabel();
-            this.User = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(373, 365);
             this.panel1.TabIndex = 0;
+            // 
+            // User
+            // 
+            this.User.Location = new System.Drawing.Point(164, 92);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(187, 22);
+            this.User.TabIndex = 7;
+            this.User.TextChanged += new System.EventHandler(this.User_TextChanged);
+            // 
+            // HelpLink
+            // 
+            this.HelpLink.ActiveLinkColor = System.Drawing.Color.Gray;
+            this.HelpLink.AutoSize = true;
+            this.HelpLink.Location = new System.Drawing.Point(127, 252);
+            this.HelpLink.Name = "HelpLink";
+            this.HelpLink.Size = new System.Drawing.Size(114, 16);
+            this.HelpLink.TabIndex = 6;
+            this.HelpLink.TabStop = true;
+            this.HelpLink.Text = "Забыли пароль?";
+            // 
+            // Password
+            // 
+            this.Password.Location = new System.Drawing.Point(164, 150);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(187, 22);
+            this.Password.TabIndex = 5;
             // 
             // button1
             // 
@@ -91,31 +117,6 @@
             this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
-            // 
-            // Password
-            // 
-            this.Password.Location = new System.Drawing.Point(164, 150);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(187, 22);
-            this.Password.TabIndex = 5;
-            // 
-            // HelpLink
-            // 
-            this.HelpLink.ActiveLinkColor = System.Drawing.Color.Gray;
-            this.HelpLink.AutoSize = true;
-            this.HelpLink.Location = new System.Drawing.Point(127, 252);
-            this.HelpLink.Name = "HelpLink";
-            this.HelpLink.Size = new System.Drawing.Size(114, 16);
-            this.HelpLink.TabIndex = 6;
-            this.HelpLink.TabStop = true;
-            this.HelpLink.Text = "Забыли пароль?";
-            // 
-            // User
-            // 
-            this.User.Location = new System.Drawing.Point(164, 92);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(187, 22);
-            this.User.TabIndex = 7;
             // 
             // Авторизация
             // 
