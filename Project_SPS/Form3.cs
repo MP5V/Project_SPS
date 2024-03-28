@@ -19,7 +19,13 @@ namespace Project_SPS
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Develop Develop_form = new Develop();
 
+            // Отображаем вторую форму
+            Develop_form.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
