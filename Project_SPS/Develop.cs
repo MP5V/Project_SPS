@@ -133,5 +133,17 @@ namespace Project_SPS
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Создаем новый экземпляр второй формы
+            Form3 Menu = new Form3();
+
+            // Отображаем вторую форму
+            Menu.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
+        }
     }
 }
