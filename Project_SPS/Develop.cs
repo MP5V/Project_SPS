@@ -125,7 +125,9 @@ namespace Project_SPS
                     new_row["KOL"] = nom.KOL;
                     new_row["START_EC"] = nom.START_EC;
                     new_row["END_EC"] = nom.END_EC;
-                    new_row["RESPONS"] = nom.RESPONS;
+                    new_row["RESPONS_ID"] = nom.RESPONS.ID;
+                    
+                 
 
                     dataSet1.NOMEN.Rows.Add(new_row);
                 }
