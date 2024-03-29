@@ -289,7 +289,7 @@ namespace Project_SPS {
             
             private global::System.Data.DataColumn columnEND_EC;
             
-            private global::System.Data.DataColumn columnRESPONS;
+            private global::System.Data.DataColumn columnRESPONS_ID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -366,9 +366,9 @@ namespace Project_SPS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn RESPONSColumn {
+            public global::System.Data.DataColumn RESPONS_IDColumn {
                 get {
-                    return this.columnRESPONS;
+                    return this.columnRESPONS_ID;
                 }
             }
             
@@ -409,7 +409,7 @@ namespace Project_SPS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public NOMENRow AddNOMENRow(string ID, string NAME, string KOL, string START_EC, string END_EC, string RESPONS) {
+            public NOMENRow AddNOMENRow(string ID, string NAME, string KOL, string START_EC, string END_EC, string RESPONS_ID) {
                 NOMENRow rowNOMENRow = ((NOMENRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -417,7 +417,7 @@ namespace Project_SPS {
                         KOL,
                         START_EC,
                         END_EC,
-                        RESPONS};
+                        RESPONS_ID};
                 rowNOMENRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNOMENRow);
                 return rowNOMENRow;
@@ -445,7 +445,7 @@ namespace Project_SPS {
                 this.columnKOL = base.Columns["KOL"];
                 this.columnSTART_EC = base.Columns["START_EC"];
                 this.columnEND_EC = base.Columns["END_EC"];
-                this.columnRESPONS = base.Columns["RESPONS"];
+                this.columnRESPONS_ID = base.Columns["RESPONS_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -461,8 +461,8 @@ namespace Project_SPS {
                 base.Columns.Add(this.columnSTART_EC);
                 this.columnEND_EC = new global::System.Data.DataColumn("END_EC", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEND_EC);
-                this.columnRESPONS = new global::System.Data.DataColumn("RESPONS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRESPONS);
+                this.columnRESPONS_ID = new global::System.Data.DataColumn("RESPONS_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRESPONS_ID);
                 this.columnID.AllowDBNull = false;
             }
             
@@ -681,17 +681,17 @@ namespace Project_SPS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string RESPONS {
+            public string RESPONS_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableNOMEN.RESPONSColumn]));
+                        return ((string)(this[this.tableNOMEN.RESPONS_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'RESPONS\' в таблице \'NOMEN\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'RESPONS_ID\' в таблице \'NOMEN\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableNOMEN.RESPONSColumn] = value;
+                    this[this.tableNOMEN.RESPONS_IDColumn] = value;
                 }
             }
             
@@ -745,14 +745,14 @@ namespace Project_SPS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsRESPONSNull() {
-                return this.IsNull(this.tableNOMEN.RESPONSColumn);
+            public bool IsRESPONS_IDNull() {
+                return this.IsNull(this.tableNOMEN.RESPONS_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetRESPONSNull() {
-                this[this.tableNOMEN.RESPONSColumn] = global::System.Convert.DBNull;
+            public void SetRESPONS_IDNull() {
+                this[this.tableNOMEN.RESPONS_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
