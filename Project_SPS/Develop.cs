@@ -126,8 +126,8 @@ namespace Project_SPS
                     new_row["START_EC"] = nom.START_EC;
                     new_row["END_EC"] = nom.END_EC;
                     new_row["RESPONS_ID"] = nom.RESPONS.ID;
-                    
-                 
+
+
 
                     dataSet1.NOMEN.Rows.Add(new_row);
                 }
@@ -144,6 +144,73 @@ namespace Project_SPS
 
             // Можно также скрыть первую форму, если это необходимо
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Root root_nomen = new Root();
+            root_nomen.NAME = "Список номенклатуры .NET";
+            root_nomen.NOMEN = new List<NOMan>();
+
+            foreach (DataRow row in dataSet1.NOMEN.Rows)
+            {
+                NOMan nomen = new NOMan();
+                var cells = row.ItemArray;
+
+                nomen.ID = cells[0].ToString();
+                nomen.NAME = cells[1].ToString();
+                nomen.KOL = cells[2].ToString();
+                nomen.START_EC = DateTime.Parse(cells[3].ToString());
+                nomen.END_EC = DateTime.Parse(cells[4].ToString());
+                nomen.RESPONS = new RESPONS();
+                nomen.RESPONS.ID = cells[5].ToString();
+
+                root_nomen.NOMEN.Add(nomen);
+            }
+
+            string json = JsonConvert.SerializeObject(root_nomen);
+
+            tb_JSON.Text = json;
+
+            int Result;
+
+            string P1 = "SET_NOMEN";
+            string P2 = json;
+            string P3 = "";
+            string P4 = "";
+            string P5 = "";
+
+            //Создание объекта для вызова веб-сервиса
+
+            WebReference.OBMEN web_1c = new WebReference.OBMEN();
+
+            System.Net.NetworkCredential nc = new System.Net.NetworkCredential();
+
+            nc.UserName = "WS_USER";
+            nc.Password = "123";
+
+            web_1c.PreAuthenticate = true;
+            web_1c.Credentials = nc;
+
+            try
+            {
+                Result = web_1c.Universal(ref P1, P2, P3, P4, P5);
+            }
+            catch (Exception ex)
+            {
+                Result = 0;
+                P1 = ex.Message;
+            }
+            if (Result == 0)
+            {
+                tb3_ServerResult.Text = Result.ToString();
+                textBox1.Text = "Ошибка " + P1;
+            }
+            else
+            {
+                tb3_ServerResult.Text = Result.ToString();
+                textBox1.Text = "OK";
+            }
         }
     }
 }
