@@ -34,13 +34,13 @@
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new Project_SPS.DataSet1();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nOMENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kOLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTARTECDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eNDECDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rESPONSIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -85,11 +85,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 254);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // nOMENBindingSource
-            // 
-            this.nOMENBindingSource.DataMember = "NOMEN";
-            this.nOMENBindingSource.DataSource = this.dataSet1BindingSource;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -139,6 +134,11 @@
             this.rESPONSIDDataGridViewTextBoxColumn.Name = "rESPONSIDDataGridViewTextBoxColumn";
             this.rESPONSIDDataGridViewTextBoxColumn.Width = 125;
             // 
+            // nOMENBindingSource
+            // 
+            this.nOMENBindingSource.DataMember = "NOMEN";
+            this.nOMENBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -170,6 +170,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Сохранить список";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
