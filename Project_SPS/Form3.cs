@@ -47,7 +47,13 @@ namespace Project_SPS
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Doc_Pass Document_TechPass = new Doc_Pass();
 
+            // Отображаем вторую форму
+            Document_TechPass.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
         }
     }
 }

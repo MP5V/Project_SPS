@@ -31,6 +31,8 @@ namespace Project_SPS.WebReference {
         
         private System.Threading.SendOrPostCallback UniversalOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Document_TechOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +75,9 @@ namespace Project_SPS.WebReference {
         public event UniversalCompletedEventHandler UniversalCompleted;
         
         /// <remarks/>
+        public event Document_TechCompletedEventHandler Document_TechCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("WWW.OBMEN.RU#OBMEN:Universal", RequestNamespace="WWW.OBMEN.RU", ResponseNamespace="WWW.OBMEN.RU", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return")]
         public int Universal(ref string Param1, string Param2, string Param3, string Param4, string Param5) {
@@ -108,6 +113,45 @@ namespace Project_SPS.WebReference {
             if ((this.UniversalCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.UniversalCompleted(this, new UniversalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("WWW.OBMEN.RU#OBMEN:Document_Tech", RequestNamespace="WWW.OBMEN.RU", ResponseNamespace="WWW.OBMEN.RU", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return")]
+        public int Document_Tech(ref string Parametr1, string Parametr2, string Parametr3, string Parametr4, string Parametr5) {
+            object[] results = this.Invoke("Document_Tech", new object[] {
+                        Parametr1,
+                        Parametr2,
+                        Parametr3,
+                        Parametr4,
+                        Parametr5});
+            Parametr1 = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Document_TechAsync(string Parametr1, string Parametr2, string Parametr3, string Parametr4, string Parametr5) {
+            this.Document_TechAsync(Parametr1, Parametr2, Parametr3, Parametr4, Parametr5, null);
+        }
+        
+        /// <remarks/>
+        public void Document_TechAsync(string Parametr1, string Parametr2, string Parametr3, string Parametr4, string Parametr5, object userState) {
+            if ((this.Document_TechOperationCompleted == null)) {
+                this.Document_TechOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDocument_TechOperationCompleted);
+            }
+            this.InvokeAsync("Document_Tech", new object[] {
+                        Parametr1,
+                        Parametr2,
+                        Parametr3,
+                        Parametr4,
+                        Parametr5}, this.Document_TechOperationCompleted, userState);
+        }
+        
+        private void OnDocument_TechOperationCompleted(object arg) {
+            if ((this.Document_TechCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Document_TechCompleted(this, new Document_TechCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -157,6 +201,40 @@ namespace Project_SPS.WebReference {
         
         /// <remarks/>
         public string Param1 {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void Document_TechCompletedEventHandler(object sender, Document_TechCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Document_TechCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Document_TechCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Parametr1 {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[1]));
