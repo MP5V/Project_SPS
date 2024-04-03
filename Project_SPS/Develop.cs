@@ -212,5 +212,70 @@ namespace Project_SPS
                 textBox1.Text = "OK";
             }
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int Result;
+
+            string P1 = "GET_DOCUMENT";
+            string P2 = "";
+            string P3 = "";
+            string P4 = "";
+            string P5 = "";
+
+            dataSet2.DOCUMENT.Clear();
+
+            //Создание объекта для вызова веб-сервиса
+
+            WebReference.OBMEN web_1c = new WebReference.OBMEN();
+
+            System.Net.NetworkCredential nc = new System.Net.NetworkCredential();
+
+            nc.UserName = "WS_USER";
+            nc.Password = "123";
+
+            web_1c.PreAuthenticate = true;
+            web_1c.Credentials = nc;
+
+            try
+            {
+                Result = web_1c.Document_Tech(ref P1, P2, P3, P4, P5);
+            }
+            catch (Exception ex)
+            {
+                Result = 0;
+                P1 = ex.Message;
+            }
+            if (Result == 0)
+            {
+               textBox2.Text = Result.ToString();
+                textBox3.Text = "Ошибка " + P1;
+            }
+            else
+            {
+                textBox2.Text = Result.ToString();
+                richTextBox1.Text = P1;
+
+                Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(P1);
+
+                foreach (DOCan doc in myDeserializedClass.DOCUMENT)
+                {
+                    DataRow new_row = dataSet2.DOCUMENT.NewRow();
+
+                    new_row["ID"] = doc.ID;
+                    new_row["NAME"] = doc.NAME.ID;
+                    new_row["NUMBER"] = doc.NUMBER;
+                    new_row["ACCEPT"] = doc.ACCEPT;
+                    new_row["RESPONS"] = doc.RESPONS_ID.ID;
+
+                    dataSet2.DOCUMENT.Rows.Add(new_row);
+                }
+            }
+        }
     }
 }

@@ -21,6 +21,25 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="Document_Tech">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parametr1" type="xs:string" />
+            <xs:element name="Parametr2" type="xs:string" />
+            <xs:element name="Parametr3" type="xs:string" />
+            <xs:element name="Parametr4" type="xs:string" />
+            <xs:element name="Parametr5" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Document_TechResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+            <xs:element name="Parametr1" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
   </types>
   <message name="UniversalRequestMessage">
@@ -29,10 +48,20 @@
   <message name="UniversalResponseMessage">
     <part name="parameters" element="tns:UniversalResponse" />
   </message>
+  <message name="Document_TechRequestMessage">
+    <part name="parameters" element="tns:Document_Tech" />
+  </message>
+  <message name="Document_TechResponseMessage">
+    <part name="parameters" element="tns:Document_TechResponse" />
+  </message>
   <portType name="OBMENPortType">
     <operation name="Universal">
       <input message="tns:UniversalRequestMessage" />
       <output message="tns:UniversalResponseMessage" />
+    </operation>
+    <operation name="Document_Tech">
+      <input message="tns:Document_TechRequestMessage" />
+      <output message="tns:Document_TechResponseMessage" />
     </operation>
   </portType>
   <binding name="OBMENSoapBinding" type="tns:OBMENPortType">
@@ -46,11 +75,29 @@
         <soapbind:body use="literal" />
       </output>
     </operation>
+    <operation name="Document_Tech">
+      <soapbind:operation soapAction="WWW.OBMEN.RU#OBMEN:Document_Tech" style="document" />
+      <input>
+        <soapbind:body use="literal" />
+      </input>
+      <output>
+        <soapbind:body use="literal" />
+      </output>
+    </operation>
   </binding>
   <binding name="OBMENSoap12Binding" type="tns:OBMENPortType">
     <soap12bind:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="Universal">
       <soap12bind:operation soapAction="WWW.OBMEN.RU#OBMEN:Universal" style="document" />
+      <input>
+        <soap12bind:body use="literal" />
+      </input>
+      <output>
+        <soap12bind:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Document_Tech">
+      <soap12bind:operation soapAction="WWW.OBMEN.RU#OBMEN:Document_Tech" style="document" />
       <input>
         <soap12bind:body use="literal" />
       </input>
