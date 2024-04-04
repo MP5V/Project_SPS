@@ -68,11 +68,23 @@ namespace Project_SPS
                 new_row["NAME"] = doc.NAME.ID;
                 new_row["NUMBER"] = doc.NUMBER;
                 new_row["ACCEPT"] = doc.ACCEPT;
-                new_row["RESPONS"] = doc.RESPONS_ID.ID;
+                new_row["RESPONS"] = doc.RESPONS_ID.ID2;
 
                 dataSet2.DOCUMENT.Rows.Add(new_row);
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Создаем новый экземпляр второй формы
+            Form3 Menu = new Form3();
+
+            // Отображаем вторую форму
+            Menu.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
         }
     }
 
