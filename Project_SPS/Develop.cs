@@ -271,7 +271,7 @@ namespace Project_SPS
                     new_row["NAME"] = doc.NAME.ID;
                     new_row["NUMBER"] = doc.NUMBER;
                     new_row["ACCEPT"] = doc.ACCEPT;
-                    new_row["RESPONS"] = doc.RESPONS_ID.ID;
+                    new_row["RESPONS"] = doc.RESPONS_ID.ID2;
 
                     dataSet2.DOCUMENT.Rows.Add(new_row);
                 }

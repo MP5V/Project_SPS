@@ -38,7 +38,7 @@ namespace Project_SPS
 
     public class RESPONS_ID
     {
-        public string ID { get; set; }
+        public string ID2 { get; set; }
     }
 
     public class Root
