@@ -42,7 +42,13 @@ namespace Project_SPS
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Sotr_List ListOfemp = new Sotr_List();
 
+            // Отображаем вторую форму
+            ListOfemp.Show();
+
+            // Можно также скрыть первую форму, если это необходимо
+            this.Hide();
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -33,6 +33,8 @@ namespace Project_SPS.WebReference {
         
         private System.Threading.SendOrPostCallback Document_TechOperationCompleted;
         
+        private System.Threading.SendOrPostCallback List_empOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -76,6 +78,9 @@ namespace Project_SPS.WebReference {
         
         /// <remarks/>
         public event Document_TechCompletedEventHandler Document_TechCompleted;
+        
+        /// <remarks/>
+        public event List_empCompletedEventHandler List_empCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("WWW.OBMEN.RU#OBMEN:Universal", RequestNamespace="WWW.OBMEN.RU", ResponseNamespace="WWW.OBMEN.RU", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -152,6 +157,45 @@ namespace Project_SPS.WebReference {
             if ((this.Document_TechCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Document_TechCompleted(this, new Document_TechCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("WWW.OBMEN.RU#OBMEN:List_emp", RequestNamespace="WWW.OBMEN.RU", ResponseNamespace="WWW.OBMEN.RU", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return")]
+        public int List_emp(ref string Par1, string Par2, string Par3, string Par4, string Par5) {
+            object[] results = this.Invoke("List_emp", new object[] {
+                        Par1,
+                        Par2,
+                        Par3,
+                        Par4,
+                        Par5});
+            Par1 = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void List_empAsync(string Par1, string Par2, string Par3, string Par4, string Par5) {
+            this.List_empAsync(Par1, Par2, Par3, Par4, Par5, null);
+        }
+        
+        /// <remarks/>
+        public void List_empAsync(string Par1, string Par2, string Par3, string Par4, string Par5, object userState) {
+            if ((this.List_empOperationCompleted == null)) {
+                this.List_empOperationCompleted = new System.Threading.SendOrPostCallback(this.OnList_empOperationCompleted);
+            }
+            this.InvokeAsync("List_emp", new object[] {
+                        Par1,
+                        Par2,
+                        Par3,
+                        Par4,
+                        Par5}, this.List_empOperationCompleted, userState);
+        }
+        
+        private void OnList_empOperationCompleted(object arg) {
+            if ((this.List_empCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.List_empCompleted(this, new List_empCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -235,6 +279,40 @@ namespace Project_SPS.WebReference {
         
         /// <remarks/>
         public string Parametr1 {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void List_empCompletedEventHandler(object sender, List_empCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class List_empCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal List_empCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Par1 {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[1]));

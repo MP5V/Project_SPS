@@ -31,6 +31,16 @@ namespace Project_SPS
         public string ID { get; set; }
     }
 
+    public class EMPan
+    {
+        public string ID { get; set; }
+        public string SURNAME { get; set; }
+        public string NAME { get; set; }
+        public string FAT_NAME { get; set; }
+        public string GENDER { get; set; }
+        public string BDATE {  get; set; }
+    }
+
     public class NAME_ID
     {
         public string ID { get; set; }
@@ -46,6 +56,7 @@ namespace Project_SPS
         public string NAME { get; set; }
         public List<NOMan> NOMEN { get; set; }
         public List<DOCan> DOCUMENT { get; set; }
+        public List<EMPan> EMPLOY {  get; set; }
     }
 
 }
