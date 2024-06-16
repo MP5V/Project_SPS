@@ -35,12 +35,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dOCUMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aCCEPTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rESPONSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOCUMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).BeginInit();
@@ -76,6 +76,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -94,11 +95,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 263);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // dOCUMENTBindingSource
-            // 
-            this.dOCUMENTBindingSource.DataMember = "DOCUMENT";
-            this.dOCUMENTBindingSource.DataSource = this.dataSet2;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -139,6 +135,11 @@
             this.rESPONSDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.rESPONSDataGridViewTextBoxColumn.Name = "rESPONSDataGridViewTextBoxColumn";
             this.rESPONSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dOCUMENTBindingSource
+            // 
+            this.dOCUMENTBindingSource.DataMember = "DOCUMENT";
+            this.dOCUMENTBindingSource.DataSource = this.dataSet2;
             // 
             // button3
             // 
