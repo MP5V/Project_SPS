@@ -86,6 +86,11 @@ namespace Project_SPS
             // Можно также скрыть первую форму, если это необходимо
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
